@@ -70,7 +70,7 @@ class HumanPlayer < Player
     new_life_points = rand(1..6)
     case new_life_points
       when 1
-        puts "Dommage, tu n'as rien trouvé !"
+        puts "Dommage, tu n'as rien trouvé ! Qui fait le malin, tombe dans le ravin !"
       when 2..5
         @life_points += 50
         @life_points = 100 if @life_points > 100
@@ -78,7 +78,7 @@ class HumanPlayer < Player
       when 6
         @life_points += 80
         @life_points = 100 if @life_points > 100
-        puts "T'as beaucoup trop de chance, ça en devient suspect..."
+        puts "T'as beaucoup trop de chance, ça en devient suspect... + 100 points !"
       end
     end
 

@@ -50,17 +50,19 @@ while user.life_points >0 && (player1.life_points > 0 || player2.life_points >0)
   elsif choice == "s"
     user.search_health_pack
     gets.chomp
-  elsif choice == "0"
+  elsif choice == "0" && player1.life_points > 0
     user.attacks(player1)
     gets.chomp
-  elsif choice == "1"
+  elsif choice == "1" && player2.life_points > 0
     user.attacks(player2)
     gets.chomp
   elsif choice != "a" || choice != "s" || choice != "0" || choice != "1"
     puts "Privé de bagarre, va dans ta chambre et attends le tour suivant."
     gets.chomp
-  end  
+  end
+  if player1.life_points >0 && player2.life_points > 0  
   puts "C'est à ton tour de te faire bastonner !"
+  end
   puts
   enemies.each { |n| n.attacks(user) if n.life_points>0 }
   if user.life_points <= 0
